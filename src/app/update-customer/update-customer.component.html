@@ -1,0 +1,236 @@
+<section id="createCustomer">
+    <div class="container-lg mt-5 bg-light">
+
+        <h2 class="text-center display-3 mt-3">Update Customer's details</h2>
+        <div class="container-sm m-5 bg-light">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                <div>
+                    <label class="mt-3 form-label">Name: </label>
+                    <input type="text" name="customerName" class="form-control" placeholder="eg: Aniket"
+                        [(ngModel)]="customer.name" formControlName="name">
+                </div>
+
+                <!-- name validation -->
+                <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                        Name is required**
+                    </div>
+                    <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+                        Min. 2 characters required**
+                    </div>
+                    <div *ngIf="f['name'].errors && f['name'].errors['maxlength']">
+                        Max. 30 characters allowed**
+                    </div>
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Lastname: </label>
+                    <input type="text" name="customerLasName" class="form-control" placeholder="eg: Sharma"
+                        [(ngModel)]="customer.lastName">
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Email: </label>
+                    <input typr="text" name="customerEmail" class="form-control " placeholder="eg: ram@xyz.com"
+                        [(ngModel)]="customer.email" formControlName="email">
+                </div>
+
+                <!-- email validation -->
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                        Email is required**
+                    </div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">
+                        Invalid Email**
+                    </div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['maxlength']">
+                        Max. 30 characters allowed**
+                    </div>
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Contact Number: </label>
+                    <input type="tel" name="customerNumber" class="form-control " placeholder="eg: 9215212121"
+                        [(ngModel)]="customer.contactNumber" formControlName="phone">
+                </div>
+
+                <!-- Contact Validation -->
+                <div *ngIf="f['phone'].touched && f['phone'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['required']">
+                        Contact No. is required**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['pattern']">
+                        Invalid Phone Number**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['maxlength']">
+                        Max. 10 characters allowed**
+                    </div>
+                    <div *ngIf="f['phone'].errors && f['phone'].errors['minlength']">
+                        Min. 10 characters required**
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Gender: </label>
+                    <label style="margin-left: 15px;">Male </label>
+                    <input type="radio" name="gender" value="Male" [(ngModel)]="customer.gender"
+                        formControlName="gender">
+                    <label style="margin-left: 15px;">Female </label>
+                    <input type="radio" name="gender" value="Female" [(ngModel)]="customer.gender"
+                        formControlName="gender">
+                    <label style="margin-left: 15px;">Others </label>
+                    <input type="radio" name="gender" value="Others" [(ngModel)]="customer.gender"
+                        formControlName="gender">
+                </div>
+
+                <!-- gender validation -->
+                <div *ngIf="f['gender'].touched && f['gender'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['gender'].errors && f['gender'].errors['required']">
+                        Gender is required**
+                    </div>
+                </div>
+
+                <div>
+                    <label class="mt-3  form-label">Date Of Birth: </label>
+                    <input type="date" name="customerDOB" class="form-date ms-2" [(ngModel)]="customer.dateOfBirth"
+                        formControlName="dob">
+                </div>
+
+                <!-- Date of Birth Validation -->
+                <div *ngIf="f['dob'].touched && f['dob'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['dob'].errors && f['dob'].errors['required']">
+                        Date Of Birth is required**
+                    </div>
+                </div>
+
+
+                <div>
+                    <label class="mt-3 form-label">Balance: </label>
+                    <input type="number" name="customerBalance" class="form-control " placeholder="Rs"
+                        [(ngModel)]="customer.balance" formControlName="balance">
+                </div>
+
+                <!-- balance validation -->
+                <div *ngIf="f['balance'].touched && f['balance'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['balance'].errors && f['balance'].errors['required']">
+                        balance is required**
+                    </div>
+                </div>
+
+
+                <div>
+                    <label class="mt-3 form-label">Aadhar Number: </label>
+                    <input type="number" name="customerAadharNumber" class="form-control"
+                        [(ngModel)]="customer.aadharNumber" formControlName="aadharNumber">
+                </div>
+
+                <!-- aadhar number validation -->
+                <div *ngIf="f['aadharNumber'].touched && f['aadharNumber'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['aadharNumber'].errors && f['aadharNumber'].errors['required']">
+                        Aadhar Number is required**
+                    </div>
+
+                    <div *ngIf="f['aadharNumber'].errors && f['aadharNumber'].errors['maxlength']">
+                        Only 12 characters allowed**
+                    </div>
+                    <div *ngIf="f['aadharNumber'].errors && f['aadharNumber'].errors['minlength']">
+                        Only 12 characters allowed**
+                    </div>
+
+
+                </div>
+
+
+                <div>
+                    <label class="mt-3 form-label">Pan number: </label>
+                    <input type="text" name="customerPanNumber" class="form-control" placeholder="eg: AQYWQ1234Q"
+                        [(ngModel)]="customer.panNumber" formControlName="panNumber">
+                </div>
+
+                <!-- pan number validation -->
+                <div *ngIf="f['panNumber'].touched && f['panNumber'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['panNumber'].errors && f['panNumber'].errors['required']">
+                        Pan number is required**
+                    </div>
+                    <div *ngIf="f['panNumber'].errors && f['panNumber'].errors['pattern']">
+                        Invalid Pan Number**
+                    </div>
+                    <div *ngIf="f['panNumber'].errors && f['panNumber'].errors['maxlength']">
+                        Max. 10 characters allowed**
+                    </div>
+                    <div *ngIf="f['panNumber'].errors && f['panNumber'].errors['minlength']">
+                        Min. 10 characters required**
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Account Type: </label>
+                    <select name="accountType" id="" class="form-select" [(ngModel)]="customer.accountType"
+                        formControlName="accountType">
+                        <option value="Saving">Saving</option>
+                        <option value="Current">Current</option>
+                    </select>
+                </div>
+
+                <!-- account type is required -->
+                <div *ngIf="f['accountType'].touched && f['accountType'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['accountType'].errors && f['accountType'].errors['required']">
+                        Account Type is required**
+                    </div>
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">City: </label>
+                    <input type="text" name="customerCity" class="form-control" placeholder="eg: Solan"
+                        [(ngModel)]="customer.address.city" formControlName="city">
+                </div>
+
+                <!-- city validation -->
+                <div *ngIf="f['city'].touched && f['city'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['city'].errors && f['city'].errors['required']">
+                        City is required**
+                    </div>
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">Pincode: </label>
+                    <input type="number" name="customerPincode" class="form-control" placeholder="eg: 173211"
+                        [(ngModel)]="customer.address.pincode" formControlName="pin">
+                </div>
+
+                <!-- pincode validation` -->
+                <div *ngIf="f['pin'].touched && f['pin'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['pin'].errors && f['pin'].errors['required']">
+                        Pin Code is required**
+                    </div>
+                </div>
+
+                <div>
+                    <label class="mt-3 form-label">State: </label>
+                    <input type="text" name="customerState" class="form-control " placeholder="eg: Himachal Pradesh"
+                        [(ngModel)]="customer.address.state" formControlName="state">
+                </div>
+
+                <!-- state pincode -->
+                <div *ngIf="f['state'].touched && f['state'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['state'].errors && f['state'].errors['required']">
+                        State is required**
+                    </div>
+                </div>
+
+                <div class="text-center m-5">
+
+                    <button  class="btn btn-secondary btn-lg mb-3" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</section>

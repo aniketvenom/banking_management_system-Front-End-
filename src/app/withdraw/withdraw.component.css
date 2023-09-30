@@ -1,0 +1,19 @@
+.alert
+{
+    margin: 0;
+    padding-top: 2px;
+    background: noane;
+    color: red;
+    font-size: 11px;
+    border: none;
+}
+
+.success_msg{
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  
+  .success_msg h6{
+    margin: 0% !important;
+    margin: 0 30px !important;
+  }

@@ -1,0 +1,56 @@
+<section class="transactionDetails">
+
+    <div class="container-lg bg-light m-5">
+
+        <div class="text-center lead m-5 bg-light">
+            <label for="" class="form-label text-center mt-3">Enter Account Number:</label>
+            <input type="number" class="form-control mt-3" [(ngModel)]="accountNumber">
+            <button class="btn btn-outline-success mt-3" (click)="seeTransaction()" >See now</button>
+        </div>
+
+        <div class="col-md-6 offset-md-3 mb-3">
+            <div class="container m-3">
+
+                <h3 class="text-center display-3 m-3">Transaction Details</h3>
+                <table class="table table-striped m-3">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Date Of Transaction</th>
+                            <th>Time Of Transaction</th>
+                            <th>Transaction Type</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let transaction of transactionDetails" >
+                            <td>Rs {{transaction.amount}}</td>
+                            <td>{{transaction.dateOfTransaction}}</td>
+                            <td>{{transaction.timeOfTransaction}}</td>
+                            <td>{{transaction.transactionType}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- transactionId !: number;
+
+
+    amount !: any;
+
+
+    dateOfTransaction !: Date;
+
+
+    timeOfTransaction !: Time;
+
+
+    transactionType !: string; -->

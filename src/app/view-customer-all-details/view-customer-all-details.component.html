@@ -1,0 +1,55 @@
+<section id="ViewCustomer">
+    <div class="container-lg  m-5 bg-light">
+        <h4 class="text-center display-5 m-5 lead">{{customer.name}}'s Details</h4>
+        <div class="row justify-content-center bg-light">
+            <div class="col-3 col-lg-5 bg-light">
+                <div class="card ms-5 border text-center bg-light border border-0">
+                    <div class="card-body  bg-light text-muted fw-bold m-3">
+                        <p class=" mt-2">Email id:</p>
+                        <p class=" mt-2">Name:</p>
+                        <p class=" mt-2">Contact:</p>
+                        <p class=" mt-2">DOB:</p>
+                        <p class=" mt-2">Balance:</p>
+                        <p class=" mt-2">Aadhar Number:</p>
+                        <p class=" mt-2">Account Number:</p>
+                        <p class=" mt-2">Pan Number:</p>
+                        <p class=" mt-2">Account Type:</p>
+                        <p class=" mt-2">date Of AccountCreation:</p>
+                        <p class=" mt-2">Gender:</p>
+                        <p class=" mt-2">State:</p>
+                        <p class=" mt-2">Location:</p>
+                        <p class=" mt-2">Pincode:</p>
+                        <p class=" mt-2">User Id:</p>
+                        <p class=" mt-2">password:</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-lg-5 algn-item-center bg-light">
+
+                <div class="card text-center bg-light border border-0">
+                    <div class="card-body bg-light m-3">
+                        <p class=" mt-2">{{customer.name}}</p>
+                        <p class=" mt-2">{{customer.email}}</p>
+                        <p class=" mt-2">{{customer.contactNumber}}</p>
+                        <p class=" mt-2">{{customer.dateOfBirth}}</p>
+                        <p class=" mt-2"> {{customer.balance}} <label for="" class="text-success">RS.</label></p>
+                        <p class=" mt-2">{{customer.aadharNumber}}</p>
+                        <p class=" mt-2">{{customer.accountNumber}}</p>
+                        <p class=" mt-2">{{customer.panNumber}}</p>
+                        <p class=" mt-2">{{customer.accountType}}</p>
+                        <p class=" mt-2">{{customer.dateOfAccountCreation}}</p>
+                        <p class=" mt-2">{{customer.gender}}</p>
+                        <p class=" mt-2">{{customer.address.state}}</p>
+                        <p class=" mt-2">{{customer.address.city}}</p>
+                        <p class=" mt-2">{{customer.address.pincode}}</p>
+                        <p class=" mt-2">{{customer.userId}}</p>
+                        <p class=" mt-2">{{customer.password}}</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

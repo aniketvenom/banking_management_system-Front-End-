@@ -1,0 +1,42 @@
+<section id="deposite">
+    <div class="container-lg m-5 align-item-center bg-light">
+        <div class="card  m-5 border border-0 bg-light">
+            <div class="card-body m-5">
+
+                <h3 class="text-center text-success display-3 m-3">DEPOSIT</h3>
+                
+                   <form action="" (ngSubmit)="onSubmit()" [formGroup]="form">
+
+                    <label for="" class="form-label lead mt-3">Account Number:</label>
+                    <input type="number" class="form-control " [(ngModel)]="accountNumber" formControlName="accountNumber" >
+
+                    <div *ngIf="f['accountNumber'].touched && f['accountNumber'].invalid" class="alert alter-danger">
+                        <div *ngIf="f['accountNumber'].errors && f['accountNumber'].errors['required']">
+                            Account Number is required
+                        </div>
+                    </div>
+
+                    <label for="" class="form-label lead">Amount:</label>
+                    <input type="number" name="amount" id="" placeholder="Rs." class="form-control" [(ngModel)]="amount" formControlName="balance">
+
+                    <div *ngIf="f['balance'].touched && f['balance'].invalid" class="alert alter-danger">
+                        <div *ngIf="f['balance'].errors && f['balance'].errors['min']">
+                            Minimum amount should be Rs. 100 
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="align-item-center text-center">
+
+                        <button class="btn btn-outline-success btn-lg mt-5 " type="submit">Deposit Now</button>
+                    </div>
+
+                   </form>
+                    
+                    
+                
+            </div>
+        </div>
+</div>
+</section>

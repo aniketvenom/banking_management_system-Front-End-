@@ -1,0 +1,19 @@
+<section id="balance">
+    <div class="container-lg m-5 align-item-center bh-light">
+        <div class="card  m-5 border border-0 bg-light">
+            <div class="card-body m-5 text-center">
+
+                <h3 class="text-center text-success display-3 m-3">Check Balance</h3>
+                <label for="" class="form-label mt-5 text-center">Enter Account Number</label>
+                <input type="number" name="acountNo" id="" class="form-control" [(ngModel)]="accountNumber">
+
+                <button class="btn btn-outline-success m-5 btn-lg" (click)="balance()">Check Balance</button>
+                
+            </div>
+            <div class="containe-lg">
+                <label for="" class="display-5 ms-5 mb-4">Balance: <label for="" class="text-success">{{money}} Rupees</label></label>
+            </div>
+        </div>
+        
+</div>
+</section>

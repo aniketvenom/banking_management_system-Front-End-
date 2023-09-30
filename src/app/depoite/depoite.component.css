@@ -1,0 +1,9 @@
+.alert
+{
+    margin: 0;
+    padding-top: 2px;
+    background: noane;
+    color: red;
+    font-size: 11px;
+    border: none;
+}

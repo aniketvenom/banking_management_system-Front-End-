@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3">
+    <div class="container-lg m-5 bg-light p-5">
+
+        <h3 class="text-center display-3 m-3 ">Disabled Accounts</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let c of recycleBin">
+                    <td>{{c.accountNumber}}</td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.email}}</td>
+                    <td>Rs. {{c.balance}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
