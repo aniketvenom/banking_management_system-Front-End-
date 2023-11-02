@@ -66,7 +66,7 @@ export class WithdrawComponent implements OnInit {
       );
     }
     else {
-      alert("Insufficient Balance")
+      alert("You need at least Rs.100  To withdraw balance");
     }
 
 

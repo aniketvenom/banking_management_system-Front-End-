@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerComponent } from './customer/customer.component';
-import { StaffComponent } from './staff/staff.component';
+
 import { CreateCustomerAccountComponent } from './create-customer-account/create-customer-account.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,12 +19,13 @@ import { SeeTransactionDetailsComponent } from './see-transaction-details/see-tr
 import { RecycleBinComponent } from './recycle-bin/recycle-bin.component';
 import { ViewSingleCustomerComponent } from './view-single-customer/view-single-customer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CustomerComponent,
-    StaffComponent,
+   
     CreateCustomerAccountComponent,
     CustomerListComponent,
     DepoiteComponent,
@@ -35,6 +36,7 @@ import { ViewSingleCustomerComponent } from './view-single-customer/view-single-
     SeeTransactionDetailsComponent,
     RecycleBinComponent,
     ViewSingleCustomerComponent
+  
   ],
   imports: [
     BrowserModule,

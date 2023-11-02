@@ -18,7 +18,14 @@ export class SeeTransactionDetailsComponent {
     this.authService.getTransactionDetails(this.accountNumber).subscribe(
       data=>
       {
-        this.transactionDetails = data;
+        if(data===null)
+        {
+          alert("No transaction has been made by this acccount");
+        }
+        else{
+          this.transactionDetails = data;
+        }
+        
       }
     )
   }

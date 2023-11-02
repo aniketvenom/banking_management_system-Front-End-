@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TransactionDetails } from "./transaction-details";
 import { RecycleBin } from "./recycle-bin";
+import { JwtToken } from "./jwt-token";
+import { Staff } from "./staff";
 
 const CustomerApi = "http://localhost:8080/";
 const httpOptions = { headers: new HttpHeaders({ 'content-Type': 'application/json' }) };
@@ -60,5 +62,35 @@ export class Authservice {
     getAllDeletedAccounts(): Observable<RecycleBin[]>
     {
         return this.http.get<RecycleBin[]>(CustomerApi+"getAllDeletedAccounts");
+    }
+
+    login(userName:String,password:any):Observable<any>
+    {
+        return this.http.post(CustomerApi+"login/"+`${userName}`+"/"+`${password}`,httpOptions);
+    }
+
+    createStaffMemberAccount(staff:Staff): Observable<Object>
+    {
+        return this.http.post<any>(CustomerApi+"createStaffAccount",staff);
+    }
+
+    getAllStaffMember(): Observable<Staff[]>
+    {
+        return this.http.get<Staff[]>(CustomerApi+"getAllStaffMembers");
+    }
+
+    updateStaffMember(staff:Staff):Observable<Staff>
+    {
+        return this.http.post<Staff>(CustomerApi+"updateStaffMemberDetailsUsingStaffId",staff);
+    }
+
+    getStaffMemberUsingId(staffId:String): Observable<Staff>
+    {
+        return this.http.get<Staff>(CustomerApi+"getStaffMemberUsingStaffId/"+`${staffId}`);
+    }
+
+    deleteStaffMember(staffId: String):Observable<any>
+    {
+        return this.http.delete(CustomerApi+"deleteStaffMemberByStaffId/"+`${staffId}`);
     }
 }

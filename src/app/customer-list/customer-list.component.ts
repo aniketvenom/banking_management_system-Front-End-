@@ -49,7 +49,7 @@ export class CustomerListComponent implements OnInit {
       data=>
       {
         alert("Account has been deleted");
-        this.router.navigate(['customerList']);
+        this.router.navigate(['recycleBin']);
       }
     )
   }

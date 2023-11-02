@@ -1,0 +1,11 @@
+img{
+    position: absolute;
+    margin-left: -655px;
+    margin-top: -49px;
+    height: 442px;
+    width: 1314px;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+
